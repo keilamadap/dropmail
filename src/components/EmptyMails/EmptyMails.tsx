@@ -1,5 +1,6 @@
 import * as S from "./styles";
 import { Icon } from "@iconify/react";
+
 const EmptyMails = () => {
   return (
     <S.Container>

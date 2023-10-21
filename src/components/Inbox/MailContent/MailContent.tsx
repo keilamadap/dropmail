@@ -1,26 +1,7 @@
 import useMedia from "../../../hooks/useMedia";
+import { MailProps } from "../../../types/mailType";
 import * as S from "./styles";
 import { Icon } from "@iconify/react";
-
-export type Mail = {
-  toAddrOrig: string;
-  toAddr: string;
-  text: string;
-  receivedAt: string;
-  rawSize: number;
-  raw: string;
-  id: string;
-  html: string | null;
-  headerSubject: string;
-  headerFrom: string;
-  fromAddr: string;
-  downloadUrl: string;
-  decodeStatus: string;
-};
-
-export type MailProps = {
-  mails: Mail[];
-};
 
 const MailContent = ({ mails }: MailProps) => {
   const mobile = useMedia("(max-width: 1000px)");

@@ -8,8 +8,9 @@ import {
 } from "./services/queries/queries";
 import TemporaryMail from "./components/TemporaryMail/TemporaryMail";
 import MailList from "./components/Inbox/List/MailList";
-import MailContent, { Mail } from "./components/Inbox/MailContent/MailContent";
+import MailContent from "./components/Inbox/MailContent/MailContent";
 import * as S from "./styles/mainStyle";
+import { Mail } from "./types/mailType";
 
 function App() {
   const mobile = useMedia("(max-width: 1000px)");
@@ -108,10 +109,6 @@ function App() {
     handleCreateSession();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  useEffect(() => {
-    handleExpiredData();
-  }, [sessionId]);
 
   return (
     <S.MainContainer $ismobile={mobile ? true : undefined}>

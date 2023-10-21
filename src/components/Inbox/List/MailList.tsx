@@ -1,7 +1,7 @@
 import useMedia from "../../../hooks/useMedia";
 import * as S from "./styles";
 import EmptyMails from "../../EmptyMails/EmptyMails";
-import { MailProps } from "../MailContent/MailContent";
+import { MailProps } from "../../../types/mailType";
 
 const EmailList = ({ mails }: MailProps) => {
   const mobile = useMedia("(max-width: 1000px)");
