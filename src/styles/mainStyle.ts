@@ -9,13 +9,13 @@ export const MainContainer = styled.div<StyleProps>`
   display: flex;
   flex-direction: column;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
 
   ${(props) =>
     props.$ismobile &&
     `
-    margin-top: 10px;
-    padding: 10px;
+    height: 100%;
+    padding-top: 50px;
   `};
 `;
 

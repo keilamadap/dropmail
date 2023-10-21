@@ -6,7 +6,7 @@ import useMedia from "../../hooks/useMedia";
 
 type TemporaryMailProps = {
   randomEmail: string;
-  handleIncomingMail: any;
+  handleIncomingMail: () => Promise<void>;
 };
 
 const TemporaryEmail = ({
@@ -14,8 +14,8 @@ const TemporaryEmail = ({
   handleIncomingMail,
 }: TemporaryMailProps) => {
   const mobile = useMedia("(max-width: 1000px)");
-  const [isCopied, setIsCopied] = useState(false);
-  const [countdown, setCountdown] = useState(15);
+  const [isCopied, setIsCopied] = useState<boolean>(false);
+  const [countdown, setCountdown] = useState<number>(15);
 
   const copyToClipboard = () => {
     window.navigator.clipboard.writeText(randomEmail);

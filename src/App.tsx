@@ -22,22 +22,6 @@ function App() {
 
   const storageAvailable = localStorageAvailable();
 
-  useEffect(() => {
-    const storedId = storageAvailable
-      ? localStorage.getItem("sessionId")
-      : null;
-    if (storedId) {
-      setSessionId(JSON.parse(storedId));
-    }
-
-    const storedRandomEmail = storageAvailable
-      ? localStorage.getItem("randomEmail")
-      : null;
-    if (storedRandomEmail) {
-      setRandomEmail(JSON.parse(storedRandomEmail));
-    }
-  }, []);
-
   const handleCreateSession = async () => {
     try {
       const response = await api.post("/", { query: GRAPHQL_MUTATION });
@@ -66,7 +50,6 @@ function App() {
         const parsedResponse = JSON.parse(response);
         const expiresAt = new Date(parsedResponse.expiresAt);
         if (expiresAt <= new Date()) {
-          console.log("expirou");
           localStorage.removeItem("sessionId");
           localStorage.removeItem("sessionData");
           setSessionId("");
@@ -88,13 +71,9 @@ function App() {
 
       const response = await api.post("/", { query: graphqlQuery });
       const newMails = response?.data?.session?.mails;
-
-      console.log("newMails", response);
-
       if (newMails && newMails.length > 0) {
         setLastReceivedMailId(newMails[newMails.length - 1].id);
         setMails(newMails);
-        console.log(newMails);
       }
     } catch (error) {
       console.error("Error:", error);
@@ -108,6 +87,21 @@ function App() {
   };
 
   checkIncomingMailPeriodically();
+
+  useEffect(() => {
+    const storedId = storageAvailable
+      ? localStorage.getItem("sessionId")
+      : null;
+    if (storedId) {
+      setSessionId(JSON.parse(storedId));
+    }
+    const storedRandomEmail = storageAvailable
+      ? localStorage.getItem("randomEmail")
+      : null;
+    if (storedRandomEmail) {
+      setRandomEmail(JSON.parse(storedRandomEmail));
+    }
+  }, []);
 
   useEffect(() => {
     handleExpiredData();

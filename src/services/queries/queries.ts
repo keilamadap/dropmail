@@ -1,4 +1,4 @@
-type IncomingMail = {
+type IncomingMailProps = {
   sessionId: string;
   lastReceivedMailId?: string | null;
 };
@@ -18,7 +18,7 @@ export const GRAPHQL_MUTATION = `
 export const GRAPHQL_INCOMINGMAIL = ({
   sessionId,
   lastReceivedMailId,
-}: IncomingMail) => {
+}: IncomingMailProps) => {
   if (lastReceivedMailId) {
     return `
       query {

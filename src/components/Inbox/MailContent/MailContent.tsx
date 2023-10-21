@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import useMedia from "../../../hooks/useMedia";
 import * as S from "./styles";
 import { Icon } from "@iconify/react";
