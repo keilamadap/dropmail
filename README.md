@@ -6,9 +6,7 @@
 </div>
 
 ## Descrição do Projeto
-<h1 align="center">
-    <a href="https://pt-br.reactjs.org/">🔗 React</a>
-</h1>
+
 <p >Aplicação React que consome os dados da API Dropmail para exibição de email temporário, desta forma os usuários podem utilizar serviços sem expor seu email real. 
 </p>
 
