@@ -7,13 +7,14 @@
 
 ## Tabela de Conteúdos
 
-<p align="center">
- <a href="#descricao">Descrição do Projeto</a> •
- <a href="#demonstracao">Demonstração do Projeto</a> • 
- <a href="#tecnologias">Tecnologias</a> • 
- <a href="#comousar">Como usar?</a> • 
- 
-</p>
+<div style="display: flex; justify-content: center;">
+    <ul>
+        <li><a href="#descricao">Descrição do Projeto</a></li>
+        <li><a href="#demonstracao">Demonstração do Projeto</a></li>
+        <li><a href="#tecnologias">Tecnologias</a></li>
+        <li><a href="#comousar">Como usar?</a></li>
+    </ul>
+</div>
 
 ## Descrição do Projeto <span id="descricao" />
 
