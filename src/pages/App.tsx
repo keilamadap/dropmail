@@ -1,17 +1,17 @@
-import useMedia from "./hooks/useMedia";
+import useMedia from "../hooks/useMedia";
 import { useState, useEffect } from "react";
-import localStorageAvailable from "./utils/localStorageAvailable";
-import api from "./services/axios/axios";
+import localStorageAvailable from "../utils/localStorageAvailable";
+import api from "../services/axios/axios";
 import {
   GRAPHQL_INCOMINGMAIL,
   GRAPHQL_MUTATION,
-} from "./services/queries/queries";
-import TemporaryMail from "./components/TemporaryMail/TemporaryMail";
-import MailList from "./components/Inbox/List/MailList";
-import MailContent from "./components/Inbox/MailContent/MailContent";
-import * as S from "./styles/mainStyle";
-import { IMail } from "./types/mailType";
-import NotificationButton from "./components/notification/NotificationButton";
+} from "../services/queries/queries";
+import TemporaryMail from "../components/TemporaryMail/TemporaryMail";
+import MailList from "../components/Inbox/List/MailList";
+import MailContent from "../components/Inbox/MailContent/MailContent";
+import * as S from "../styles/mainStyle";
+import { IMail } from "../types/mailType";
+import NotificationButton from "../components/notification/NotificationButton";
 
 type SessionData = {
   id: string;

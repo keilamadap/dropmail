@@ -19,7 +19,7 @@ Como Rodar o Projeto ?
 1. Clone o repositorio git
 
 ```shell
-git clone https://github.com/keilamadap/dropmail-challenge.git
+git clone https://github.com/keilamadap/dropmail.git
 ```
 
 2. Entre no diretorio
