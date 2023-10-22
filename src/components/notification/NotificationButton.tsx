@@ -3,9 +3,9 @@ import { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
 import * as S from "./styles";
 
-interface NotificationButtonProps {
+type NotificationButtonProps = {
   lastReceivedMailId: string | null;
-}
+};
 
 function NotificationButton({ lastReceivedMailId }: NotificationButtonProps) {
   const [notificationPermission, setNotificationPermission] = useState(
@@ -33,7 +33,7 @@ function NotificationButton({ lastReceivedMailId }: NotificationButtonProps) {
   };
 
   return (
-    <Stack>
+    <Stack sx={{ display: "flex" }}>
       {notificationPermission === "granted" ? (
         lastReceivedMailId ? (
           <>
@@ -43,21 +43,27 @@ function NotificationButton({ lastReceivedMailId }: NotificationButtonProps) {
           </>
         ) : (
           <S.StyledStack>
-            <Typography variant="body2">No Notifications</Typography>
+            <Typography variant="caption">No Notifications</Typography>
             <Icon icon="ep:mute-notification" />
           </S.StyledStack>
         )
       ) : (
-        <Stack>
+        <Stack
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <Typography variant="caption">
             To receive notifications of new emails, click the button below:
           </Typography>
           <Button
             variant="contained"
             onClick={requestNotificationPermission}
-            sx={{ gap: "10px" }}
+            sx={{ gap: "10px", width: "10px" }}
           >
-            Allow Notifications{" "}
             <Icon icon="basil:notification-on-outline" width="20" height="20" />
           </Button>
         </Stack>

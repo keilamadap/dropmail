@@ -11,11 +11,12 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
-export default function SimpleSnackbar({ setIsOpen, isOpen }: any) {
-  const handleClick = () => {
-    setIsOpen(true);
-  };
+type SnackbarProps = {
+  isOpen: boolean;
+  setIsOpen: (isOpen: boolean) => void;
+};
 
+export default function SimpleSnackbar({ setIsOpen, isOpen }: SnackbarProps) {
   const handleClose = (
     event: React.SyntheticEvent | Event,
     reason?: string
@@ -41,13 +42,14 @@ export default function SimpleSnackbar({ setIsOpen, isOpen }: any) {
     </React.Fragment>
   );
 
-  React.useEffect(() => {
-    handleClick();
-  }, []);
-
   return (
-    <Snackbar open={isOpen} onClose={handleClose} autoHideDuration={3000}>
-      <Alert severity="success" sx={{ width: "100%" }} action={action}>
+    <Snackbar
+      open={isOpen}
+      onClose={handleClose}
+      anchorOrigin={{ vertical: "top", horizontal: "right" }}
+      autoHideDuration={3000}
+    >
+      <Alert severity="success" action={action}>
         Text copied!
       </Alert>
     </Snackbar>

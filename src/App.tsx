@@ -10,14 +10,14 @@ import TemporaryMail from "./components/TemporaryMail/TemporaryMail";
 import MailList from "./components/Inbox/List/MailList";
 import MailContent from "./components/Inbox/MailContent/MailContent";
 import * as S from "./styles/mainStyle";
-import { Mail } from "./types/mailType";
+import { IMail } from "./types/mailType";
 import NotificationButton from "./components/notification/NotificationButton";
 
 function App() {
   const mobile = useMedia("(max-width: 1000px)");
   const [sessionId, setSessionId] = useState<string>("");
   const [randomEmail, setRandomEmail] = useState<string>("");
-  const [mails, setMails] = useState<Mail[]>([]);
+  const [mails, setMails] = useState<IMail[]>([]);
   const [lastReceivedMailId, setLastReceivedMailId] = useState<string | null>(
     null
   );
