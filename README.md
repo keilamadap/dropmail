@@ -1,5 +1,5 @@
 <div style="text-align: center;">
-  # dropmail-challenge
+  ## dropmail-challenge
   <br />
   <br />
    This is a challenge by <a rel="nofollow noreferrer noopener" href="https://coodesh.com/" target="_blank">Coodesh</a>
@@ -9,7 +9,7 @@
 <p >Aplicação React que consome os dados da API Dropmail para exibição de email temporário, desta forma os usuários podem utilizar serviços sem expor seu email real. 
 </p>
 
-### Tecnologias Utilizadas:
+## Tecnologias Utilizadas:
 
 - Javascript
 - ReactJS
