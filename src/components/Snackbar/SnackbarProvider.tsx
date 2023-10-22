@@ -2,12 +2,18 @@ import * as React from "react";
 import Button from "@mui/material/Button";
 import Snackbar from "@mui/material/Snackbar";
 import IconButton from "@mui/material/IconButton";
+import MuiAlert, { AlertProps } from "@mui/material/Alert";
 
-export default function SimpleSnackbar() {
-  const [open, setOpen] = React.useState(false);
+const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
+  props,
+  ref
+) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 
+export default function SimpleSnackbar({ setIsOpen, isOpen }: any) {
   const handleClick = () => {
-    setOpen(true);
+    setIsOpen(true);
   };
 
   const handleClose = (
@@ -18,12 +24,12 @@ export default function SimpleSnackbar() {
       return;
     }
 
-    setOpen(false);
+    setIsOpen(false);
   };
 
   const action = (
     <React.Fragment>
-      <Button color="warning" size="small" onClick={handleClose}>
+      <Button color="inherit" size="small" onClick={handleClose}>
         Close
       </Button>
       <IconButton
@@ -40,14 +46,10 @@ export default function SimpleSnackbar() {
   }, []);
 
   return (
-    <Snackbar
-      sx={{
-        animation: `$snackbarInRight 0.5s`,
-      }}
-      open={open}
-      onClose={handleClose}
-      message="Mail copied!"
-      action={action}
-    />
+    <Snackbar open={isOpen} onClose={handleClose} autoHideDuration={3000}>
+      <Alert severity="success" sx={{ width: "100%" }} action={action}>
+        Text copied!
+      </Alert>
+    </Snackbar>
   );
 }

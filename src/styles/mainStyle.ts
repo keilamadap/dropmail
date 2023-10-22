@@ -1,11 +1,11 @@
-import { Stack } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import styled from "styled-components";
 
 interface StyleProps {
   $ismobile: boolean | undefined;
 }
 
-export const MainContainer = styled.div<StyleProps>`
+export const MainContainer = styled(Box)<StyleProps>`
   padding: 20px;
   display: flex;
   gap: 2rem;

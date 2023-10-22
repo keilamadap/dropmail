@@ -13,12 +13,12 @@ const MailContent = ({ mails }: MailProps) => {
 
       {mails.length > 0 ? (
         mails.map((mail) => (
-          <S.StyledCard key={mail.id}>
+          <S.StyledCard key={mail.id} elevation={3}>
             <Typography variant="body1">{mail.text}</Typography>
           </S.StyledCard>
         ))
       ) : (
-        <S.NoMailsCard>
+        <S.NoMailsCard elevation={3} variant="elevation">
           <Icon icon="line-md:coffee-half-empty-twotone-loop" width="50" />
           <Typography variant="body1">No mails yet...</Typography>
         </S.NoMailsCard>

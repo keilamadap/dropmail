@@ -21,9 +21,6 @@ const TemporaryEmail = ({
   const copyToClipboard = () => {
     window.navigator.clipboard.writeText(randomEmail);
     setIsCopied(true);
-    setTimeout(() => {
-      setIsCopied(false);
-    }, 2000);
   };
 
   useEffect(() => {
@@ -65,7 +62,9 @@ const TemporaryEmail = ({
           />
         </S.Span>
 
-        {isCopied ? <SimpleSnackbar /> : null}
+        {isCopied ? (
+          <SimpleSnackbar setIsOpen={setIsCopied} isOpen={isCopied} />
+        ) : null}
 
         <S.RefreshDiv $ismobile={mobile ? true : undefined}>
           <S.Span>

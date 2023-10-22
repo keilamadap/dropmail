@@ -12,7 +12,6 @@ import MailContent from "./components/Inbox/MailContent/MailContent";
 import * as S from "./styles/mainStyle";
 import { Mail } from "./types/mailType";
 import NotificationButton from "./components/notification/NotificationButton";
-import { Stack } from "@mui/material";
 
 function App() {
   const mobile = useMedia("(max-width: 1000px)");
@@ -82,14 +81,6 @@ function App() {
       console.error("Error:", error);
     }
   };
-
-  const checkIncomingMailPeriodically = () => {
-    setInterval(async () => {
-      await handleIncomingMail();
-    }, 15000);
-  };
-
-  checkIncomingMailPeriodically();
 
   useEffect(() => {
     const storedId = storageAvailable

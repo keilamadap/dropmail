@@ -8,12 +8,13 @@ interface StyleProps {
 export const Container = styled.div<StyleProps>`
   width: 250px;
   background-color: #fff;
-
+  border-radius: 5px;
+  border: 1px solid #d4d4d4;
+  padding: 5px;
   ${(props) =>
     props.$ismobile &&
     `
     width: 100%;
-    // border: 1px solid #d4d4d4;
   `};
 `;
 
@@ -23,6 +24,7 @@ export const TitleContainer = styled(Card)`
   display: flex;
   justify-content: center;
   text-align: center;
+  border-radius: 1px;
 `;
 
 export const StyledInfo = styled(Typography)`

@@ -38,26 +38,26 @@ function NotificationButton({ lastReceivedMailId }: NotificationButtonProps) {
         lastReceivedMailId ? (
           <>
             <Button variant="contained" onClick={showNotification}>
-              Abrir Notificações
+              Open Notification
             </Button>
           </>
         ) : (
           <S.StyledStack>
-            <Typography variant="body2">Sem novas notificações</Typography>
+            <Typography variant="body2">No Notifications</Typography>
             <Icon icon="ep:mute-notification" />
           </S.StyledStack>
         )
       ) : (
         <Stack>
           <Typography variant="caption">
-            Para receber notificações de novos emails, clique no botão abaixo:
+            To receive notifications of new emails, click the button below:
           </Typography>
           <Button
             variant="contained"
             onClick={requestNotificationPermission}
             sx={{ gap: "10px" }}
           >
-            Permitir notificações{" "}
+            Allow Notifications{" "}
             <Icon icon="basil:notification-on-outline" width="20" height="20" />
           </Button>
         </Stack>
