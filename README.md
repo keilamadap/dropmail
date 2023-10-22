@@ -1,4 +1,4 @@
-  ## Dropmail Tech Challenge
+ ## Dropmail Tech Challenge
 <div style="text-align: center;">
 
   <br />
