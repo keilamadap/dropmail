@@ -5,6 +5,10 @@
    This is a challenge by <a rel="nofollow noreferrer noopener" href="https://coodesh.com/" target="_blank">Coodesh</a>
 </div>
 
+## Descrição do Projeto
+<p align="center">Aplicação React que consome os dados da API Dropmail para exibição de email temporário, desta forma os usuários podem utilizar serviços sem expor seu email real. 
+</p>
+
 ### Tecnologias Utilizadas:
 
 - Javascript
