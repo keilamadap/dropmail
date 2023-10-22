@@ -21,6 +21,8 @@
 - Eslint
 - Prettier
 - Git
+- Material UI
+- Styled-Components
 
 Como Rodar o Projeto ?
 
