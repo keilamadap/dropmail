@@ -6,7 +6,7 @@
 </div>
 
 ## Descrição do Projeto
-<p align="center">Aplicação React que consome os dados da API Dropmail para exibição de email temporário, desta forma os usuários podem utilizar serviços sem expor seu email real. 
+<p >Aplicação React que consome os dados da API Dropmail para exibição de email temporário, desta forma os usuários podem utilizar serviços sem expor seu email real. 
 </p>
 
 ### Tecnologias Utilizadas:
