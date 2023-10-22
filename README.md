@@ -36,7 +36,7 @@
 - Material UI
 - Styled-Components
 
-<p id="comousar">Como Rodar o Projeto ?</p>
+<p id="comousar">##Como Rodar o Projeto ?</p>
 
 1. Clone o repositorio git
 
