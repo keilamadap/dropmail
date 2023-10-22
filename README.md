@@ -11,7 +11,7 @@
 
 ## Demonstração do Projeto
 
-<a rel="" href="https://dropmail-nu.vercel.app/" target="_blank"> Acesse o projeto clicando aqui </a>
+<a rel="nofollow noreferrer noopener" href="https://dropmail-nu.vercel.app/" target="_blank"> Acesse o projeto clicando aqui </a>
 
 ## Tecnologias Utilizadas:
 
