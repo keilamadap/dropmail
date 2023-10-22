@@ -1,6 +1,6 @@
 type IncomingMailProps = {
-  sessionId: string;
-  lastReceivedMailId?: string | null;
+  sessionId?: string;
+  lastReceivedMailId: string | null;
 };
 
 export const GRAPHQL_MUTATION = `

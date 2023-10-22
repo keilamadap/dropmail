@@ -13,10 +13,15 @@ import * as S from "./styles/mainStyle";
 import { IMail } from "./types/mailType";
 import NotificationButton from "./components/notification/NotificationButton";
 
+type SessionData = {
+  id: string;
+  addresses: { address: string }[];
+  expiresAt: string;
+};
+
 function App() {
   const mobile = useMedia("(max-width: 1000px)");
-  const [sessionId, setSessionId] = useState<string>("");
-  const [randomEmail, setRandomEmail] = useState<string>("");
+  const [sessionData, setSessionData] = useState<SessionData | null>(null);
   const [mails, setMails] = useState<IMail[]>([]);
   const [lastReceivedMailId, setLastReceivedMailId] = useState<string | null>(
     null
@@ -28,35 +33,23 @@ function App() {
     try {
       const response = await api.post("/", { query: GRAPHQL_MUTATION });
       const data = response.data.data.introduceSession;
-      localStorage.setItem("sessionId", JSON.stringify(data.id));
-      localStorage.setItem(
-        "randomEmail",
-        JSON.stringify(data.addresses[0].address)
-      );
       localStorage.setItem("sessionData", JSON.stringify(data));
-
-      setSessionId(data.id);
-      setRandomEmail(data.addresses[0].address);
+      setSessionData(data);
     } catch (error) {
       console.error("Error:", error);
     }
   };
 
   const handleExpiredData = () => {
-    const storedId = storageAvailable ? localStorage.getItem("sessionId") : "";
-    if (storedId) {
-      const response = storageAvailable
-        ? localStorage.getItem("sessionData")
-        : "";
-      if (response) {
-        const parsedResponse = JSON.parse(response);
-        const expiresAt = new Date(parsedResponse.expiresAt);
-        if (expiresAt <= new Date()) {
-          localStorage.removeItem("sessionId");
-          localStorage.removeItem("sessionData");
-          setSessionId("");
-          setRandomEmail("");
-        }
+    const storedData = storageAvailable
+      ? localStorage.getItem("sessionData")
+      : null;
+    if (storedData) {
+      const parsedData = JSON.parse(storedData);
+      const expiresAt = new Date(parsedData.expiresAt);
+      if (expiresAt <= new Date()) {
+        localStorage.removeItem("sessionData");
+        setSessionData(null);
       }
     }
   };
@@ -65,7 +58,7 @@ function App() {
     try {
       let graphqlQuery;
       const queryOptions = {
-        sessionId,
+        sessionId: sessionData?.id,
         lastReceivedMailId,
       };
 
@@ -83,17 +76,11 @@ function App() {
   };
 
   useEffect(() => {
-    const storedId = storageAvailable
-      ? localStorage.getItem("sessionId")
+    const storedData = storageAvailable
+      ? localStorage.getItem("sessionData")
       : null;
-    if (storedId) {
-      setSessionId(JSON.parse(storedId));
-    }
-    const storedRandomEmail = storageAvailable
-      ? localStorage.getItem("randomEmail")
-      : null;
-    if (storedRandomEmail) {
-      setRandomEmail(JSON.parse(storedRandomEmail));
+    if (storedData) {
+      setSessionData(JSON.parse(storedData));
     }
   }, []);
 
@@ -109,7 +96,9 @@ function App() {
         <NotificationButton lastReceivedMailId={lastReceivedMailId} />
       </S.StyledStack>
       <TemporaryMail
-        randomEmail={randomEmail}
+        randomEmail={
+          sessionData ? sessionData.addresses[0].address : "Carregando..."
+        }
         handleIncomingMail={handleIncomingMail}
       />
       <S.StyledDiv $ismobile={mobile ? true : undefined}>
