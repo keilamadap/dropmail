@@ -47,7 +47,7 @@ function App() {
     if (storedData) {
       const parsedData = JSON.parse(storedData);
       const expiresAt = new Date(parsedData.expiresAt);
-      if (expiresAt > new Date()) {
+      if (expiresAt >= new Date()) {
         setSessionData(parsedData);
       } else {
         localStorage.removeItem("sessionData");
@@ -77,15 +77,6 @@ function App() {
   };
 
   useEffect(() => {
-    const storedData = storageAvailable
-      ? localStorage.getItem("sessionData")
-      : null;
-    if (storedData) {
-      setSessionData(JSON.parse(storedData));
-    }
-  }, []);
-
-  useEffect(() => {
     handleExpiredData();
     handleCreateSession();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -97,9 +88,7 @@ function App() {
         <NotificationButton lastReceivedMailId={lastReceivedMailId} />
       </S.StyledStack>
       <TemporaryMail
-        randomEmail={
-          sessionData ? sessionData.addresses[0].address : "Carregando..."
-        }
+        randomEmail={sessionData ? sessionData.addresses[0].address : "-"}
         handleIncomingMail={handleIncomingMail}
       />
       <S.StyledDiv $ismobile={mobile ? true : undefined}>
