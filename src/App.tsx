@@ -47,9 +47,10 @@ function App() {
     if (storedData) {
       const parsedData = JSON.parse(storedData);
       const expiresAt = new Date(parsedData.expiresAt);
-      if (expiresAt <= new Date()) {
+      if (expiresAt > new Date()) {
+        setSessionData(parsedData);
+      } else {
         localStorage.removeItem("sessionData");
-        setSessionData(null);
       }
     }
   };
