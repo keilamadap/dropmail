@@ -15,9 +15,9 @@
  <a href="#autor">Autor</a>
 </p>
 
-## Descrição do Projeto
+## Descrição do Projeto <span id="descricao" />
 
-<p id="descricao">Aplicação React que consome os dados da API Dropmail para exibição de email temporário, desta forma os usuários podem utilizar serviços sem expor seu email real. 
+<p >Aplicação React que consome os dados da API Dropmail para exibição de email temporário, desta forma os usuários podem utilizar serviços sem expor seu email real. 
 </p>
 
 ## Demonstração do Projeto
