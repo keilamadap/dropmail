@@ -12,7 +12,7 @@
  <a href="#demonstracao">Demonstração do Projeto</a> • 
  <a href="#tecnologias">Tecnologias</a> • 
  <a href="#comousar">Como usar?</a> • 
- <a href="#autor">Autor</a>
+ 
 </p>
 
 ## Descrição do Projeto <span id="descricao" />
@@ -20,13 +20,13 @@
 <p >Aplicação React que consome os dados da API Dropmail para exibição de email temporário, desta forma os usuários podem utilizar serviços sem expor seu email real. 
 </p>
 
-## Demonstração do Projeto
+## Demonstração do Projeto <span id="demonstracao"/>
 
 <a id="demonstracao" rel="nofollow noreferrer noopener" href="https://dropmail-nu.vercel.app/"  target="_blank"> Acesse o projeto clicando aqui </a>
 
-## Tecnologias Utilizadas:
+## Tecnologias Utilizadas: <span id="tecnologias" />
 
-- <span id="tecnologias">Javascript</span>
+- Javascript
 - ReactJS
 - TypeScript
 - Eslint
