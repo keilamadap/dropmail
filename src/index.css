@@ -7,8 +7,14 @@
 
 body {
   height: 100vh;
+  padding: 10px;
+  width: 100%;
   box-sizing: border-box;
-  background-color: #fff;
+  display: grid;
+  place-items: center;
+  justify-items: stretch;
+  align-items: stretch;
+  background-color: #f2f2f2;
   font-family: "Quicksand", "Raleway", "Roboto", system-ui, Avenir, Helvetica,
     Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

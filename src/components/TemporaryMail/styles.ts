@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Stack, Typography, TextField } from "@mui/material";
+import { Input, Stack, TextField, Button } from "@mui/material";
 
 interface MainStyleProps {
   $ismobile: boolean | undefined;
@@ -33,10 +33,11 @@ export const RefreshDiv = styled.div<MainStyleProps>`
   `};
 `;
 
-export const StyledTextfield = styled(TextField)<MainStyleProps>`
-  width: 300px;
-  height: 50px;
-
+export const StyledInput = styled(Input)<MainStyleProps>`
+  width: 400px;
+  height: 40px;
+  padding-left: 10px;
+  background: #fff;
   ${(props) =>
     props.$ismobile &&
     `
@@ -44,24 +45,10 @@ export const StyledTextfield = styled(TextField)<MainStyleProps>`
   `};
 `;
 
-export const Label = styled(Typography)`
-  width: 100%;
-  font-size: 14px;
-`;
-
-export const StyledTypography = styled(Typography)`
-  font-size: 10px;
-`;
-
 export const Span = styled.span`
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-`;
-
-export const MiniDiv = styled.div`
-  display: flex;
-  align-items: center;
   gap: 10px;
 `;

@@ -1,8 +1,9 @@
-import { Typography } from "@mui/material";
+import { Button, Stack, Typography } from "@mui/material";
 import { Icon } from "@iconify/react";
 import * as S from "./styles";
 import { useEffect, useState } from "react";
 import useMedia from "../../hooks/useMedia";
+import SimpleSnackbar from "../snackabar/SnackbarProvider";
 
 type TemporaryMailProps = {
   randomEmail: string;
@@ -14,15 +15,15 @@ const TemporaryEmail = ({
   handleIncomingMail,
 }: TemporaryMailProps) => {
   const mobile = useMedia("(max-width: 1000px)");
-  const [isCopied, setIsCopied] = useState<boolean>(false);
   const [countdown, setCountdown] = useState<number>(15);
+  const [isCopied, setIsCopied] = useState<boolean>(false);
 
   const copyToClipboard = () => {
     window.navigator.clipboard.writeText(randomEmail);
     setIsCopied(true);
-    setInterval(() => {
+    setTimeout(() => {
       setIsCopied(false);
-    }, 2000);
+    }, 3000);
   };
 
   useEffect(() => {
@@ -43,39 +44,39 @@ const TemporaryEmail = ({
 
   return (
     <S.Container>
-      <S.StyledStack>
-        <S.Label variant="subtitle2">Your Temporary Email Address:</S.Label>
+      <Stack>
+        <Typography variant="body1">Your Temporary Email Address:</Typography>
 
-        <S.StyledTextfield
-          variant="outlined"
-          $ismobile={mobile ? true : undefined}
-          value={randomEmail}
-          InputProps={{
-            endAdornment: (
-              <S.Span>
-                <Icon
-                  icon="iconamoon:copy"
-                  width="20"
-                  height="20"
-                  onClick={copyToClipboard}
-                />
-                <Typography variant="body2" onClick={copyToClipboard}>
-                  {isCopied ? "Copied" : "Copy"}
-                </Typography>
-              </S.Span>
-            ),
-          }}
-        />
+        <S.Span>
+          <S.StyledInput
+            value={randomEmail}
+            $ismobile={mobile ? true : undefined}
+            type="text"
+            endAdornment={
+              <Button
+                color="primary"
+                variant="contained"
+                size="medium"
+                onClick={copyToClipboard}
+              >
+                Copy
+              </Button>
+            }
+          />
+        </S.Span>
+
+        {isCopied ? <SimpleSnackbar /> : null}
+
         <S.RefreshDiv $ismobile={mobile ? true : undefined}>
-          <S.MiniDiv>
-            <S.StyledTypography variant="subtitle2">
+          <S.Span>
+            <Typography variant="subtitle2">
               AutoRefresh in {countdown}
-            </S.StyledTypography>
+            </Typography>
 
             <Icon icon="line-md:loading-loop" width="20" height="20" />
-          </S.MiniDiv>
-          <S.MiniDiv>
-            <S.StyledTypography variant="subtitle2">Refresh</S.StyledTypography>
+          </S.Span>
+          <S.Span>
+            <Typography variant="subtitle2">Refresh</Typography>
             <Icon
               icon="ep:refresh"
               width="20"
@@ -83,9 +84,9 @@ const TemporaryEmail = ({
               height="20"
               onClick={resetCounter}
             />
-          </S.MiniDiv>
+          </S.Span>
         </S.RefreshDiv>
-      </S.StyledStack>
+      </Stack>
     </S.Container>
   );
 };

@@ -9,7 +9,8 @@ export const Container = styled.div<MainStyleProps>`
   border: 1px solid #d4d4d4;
   background-color: #f8f8f8;
   padding: 20px;
-  width: 100%;
+  width: 800px;
+  border-radius: 4px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -23,13 +24,13 @@ export const Container = styled.div<MainStyleProps>`
     height: 100%;
     width: 100%;
     display: flex;
-    align-items:center;
+    
 `};
 `;
 
 export const Paragraph = styled(Typography)`
-  font-size: 16px;
-  font-weight: 500;
+s  text-shadow: -2px 1px 2px rgba(215, 215, 215, 0.6);
+    text-align:center;
 `;
 
 export const MailInfo = styled(Typography)`
