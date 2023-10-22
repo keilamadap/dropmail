@@ -29,13 +29,8 @@ export const Container = styled.div<MainStyleProps>`
 `;
 
 export const Paragraph = styled(Typography)`
-s  text-shadow: -2px 1px 2px rgba(215, 215, 215, 0.6);
-    text-align:center;
-`;
-
-export const MailInfo = styled(Typography)`
-  font-size: 17px;
-  font-weight: 600;
+  text-shadow: -2px 1px 2px rgba(215, 215, 215, 0.6);
+  text-align: center;
 `;
 
 export const StyledCard = styled(Card)`

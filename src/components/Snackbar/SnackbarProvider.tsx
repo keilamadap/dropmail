@@ -29,7 +29,7 @@ export default function SimpleSnackbar() {
       <IconButton
         size="small"
         aria-label="close"
-        color="inherit"
+        color="default"
         onClick={handleClose}
       ></IconButton>
     </React.Fragment>
@@ -45,7 +45,6 @@ export default function SimpleSnackbar() {
         animation: `$snackbarInRight 0.5s`,
       }}
       open={open}
-      autoHideDuration={6000}
       onClose={handleClose}
       message="Mail copied!"
       action={action}

@@ -3,7 +3,7 @@ import { Icon } from "@iconify/react";
 import * as S from "./styles";
 import { useEffect, useState } from "react";
 import useMedia from "../../hooks/useMedia";
-import SimpleSnackbar from "../snackabar/SnackbarProvider";
+import SimpleSnackbar from "../Snackbar/SnackbarProvider";
 
 type TemporaryMailProps = {
   randomEmail: string;
@@ -23,7 +23,7 @@ const TemporaryEmail = ({
     setIsCopied(true);
     setTimeout(() => {
       setIsCopied(false);
-    }, 3000);
+    }, 2000);
   };
 
   useEffect(() => {

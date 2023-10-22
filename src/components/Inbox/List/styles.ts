@@ -26,10 +26,8 @@ export const TitleContainer = styled(Card)`
 `;
 
 export const StyledInfo = styled(Typography)`
-  font-size: 15px;
   padding: 5px;
   font-weight: 700;
-
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -43,8 +41,6 @@ export const StyledHeader = styled(Typography)`
 `;
 
 export const StyledBox = styled(Stack)`
-  /* border-top: 1px solid #d4d4d4; */
-  /* border-bottom: 1px solid #d4d4d4; */
   display: flex;
   flex-direction: column;
 `;

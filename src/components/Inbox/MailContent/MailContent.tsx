@@ -1,3 +1,4 @@
+import { Typography } from "@mui/material";
 import useMedia from "../../../hooks/useMedia";
 import { MailProps } from "../../../types/mailType";
 import * as S from "./styles";
@@ -13,13 +14,13 @@ const MailContent = ({ mails }: MailProps) => {
       {mails.length > 0 ? (
         mails.map((mail) => (
           <S.StyledCard key={mail.id}>
-            <S.MailInfo variant="body1">{mail.text}</S.MailInfo>
+            <Typography variant="body1">{mail.text}</Typography>
           </S.StyledCard>
         ))
       ) : (
         <S.NoMailsCard>
           <Icon icon="line-md:coffee-half-empty-twotone-loop" width="50" />
-          <S.MailInfo variant="body1">No mails yet...</S.MailInfo>
+          <Typography variant="body1">No mails yet...</Typography>
         </S.NoMailsCard>
       )}
     </S.Container>

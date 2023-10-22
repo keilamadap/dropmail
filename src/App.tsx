@@ -11,6 +11,8 @@ import MailList from "./components/Inbox/List/MailList";
 import MailContent from "./components/Inbox/MailContent/MailContent";
 import * as S from "./styles/mainStyle";
 import { Mail } from "./types/mailType";
+import NotificationButton from "./components/notification/NotificationButton";
+import { Stack } from "@mui/material";
 
 function App() {
   const mobile = useMedia("(max-width: 1000px)");
@@ -112,6 +114,9 @@ function App() {
 
   return (
     <S.MainContainer $ismobile={mobile ? true : undefined}>
+      <S.StyledStack>
+        <NotificationButton lastReceivedMailId={lastReceivedMailId} />
+      </S.StyledStack>
       <TemporaryMail
         randomEmail={randomEmail}
         handleIncomingMail={handleIncomingMail}

@@ -1,3 +1,4 @@
+import { Stack } from "@mui/material";
 import styled from "styled-components";
 
 interface StyleProps {
@@ -33,4 +34,11 @@ export const StyledDiv = styled.div<StyleProps>`
     `
     flex-direction: column;
   `};
+`;
+
+export const StyledStack = styled(Stack)`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
 `;
