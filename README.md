@@ -7,7 +7,7 @@
 
 ## Tabela de Conteúdos
 
-<p align="left">
+<p align="center">
  <a href="#descricao">Descrição do Projeto</a> •
  <a href="#demonstracao">Demonstração do Projeto</a> • 
  <a href="#tecnologias">Tecnologias</a> • 
