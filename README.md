@@ -38,6 +38,7 @@
 - Git
 - Material UI
 - Styled-Components
+- GraphQL
 
 ## Como rodar o projeto? <span id="comousar" />
 
