@@ -18,7 +18,7 @@ export const StyledStack = styled(Stack)`
   margin-bottom: 1rem;
 `;
 
-export const RefreshDiv = styled.div<MainStyleProps>`
+export const StyledDiv = styled.div<MainStyleProps>`
   display: flex;
   align-items: center;
   justify-content: center;

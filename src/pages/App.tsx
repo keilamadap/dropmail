@@ -1,11 +1,8 @@
 import useMedia from "../hooks/useMedia";
 import { useState, useEffect } from "react";
 import localStorageAvailable from "../utils/localStorageAvailable";
-import api from "../services/axios/axios";
-import {
-  GRAPHQL_INCOMINGMAIL,
-  GRAPHQL_MUTATION,
-} from "../services/queries/queries";
+import api from "../utils/axios";
+import { GRAPHQL_INCOMINGMAIL, GRAPHQL_MUTATION } from "../queries/queries";
 import TemporaryMail from "../components/TemporaryMail/TemporaryMail";
 import MailList from "../components/Inbox/List/MailList";
 import MailContent from "../components/Inbox/MailContent/MailContent";
@@ -47,10 +44,11 @@ function App() {
     if (storedData) {
       const parsedData = JSON.parse(storedData);
       const expiresAt = new Date(parsedData.expiresAt);
-      if (expiresAt >= new Date()) {
+      if (expiresAt < new Date()) {
         setSessionData(parsedData);
       } else {
         localStorage.removeItem("sessionData");
+        handleCreateSession();
       }
     }
   };
@@ -88,7 +86,9 @@ function App() {
         <NotificationButton lastReceivedMailId={lastReceivedMailId} />
       </S.StyledStack>
       <TemporaryMail
-        randomEmail={sessionData ? sessionData.addresses[0].address : "-"}
+        randomEmail={
+          sessionData ? sessionData.addresses[0].address : "Loading..."
+        }
         handleIncomingMail={handleIncomingMail}
       />
       <S.StyledDiv $ismobile={mobile ? true : undefined}>

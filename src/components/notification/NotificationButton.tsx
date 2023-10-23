@@ -26,8 +26,8 @@ function NotificationButton({ lastReceivedMailId }: NotificationButtonProps) {
 
   const showNotification = () => {
     if (Notification.permission === "granted") {
-      new Notification("Novo email recebido!", {
-        body: "Você tem um novo email na sua caixa de entrada.",
+      new Notification("New email received!", {
+        body: "You have 1 unread email.",
       });
     }
   };

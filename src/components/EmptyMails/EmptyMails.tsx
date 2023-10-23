@@ -5,7 +5,7 @@ const EmptyMails = () => {
   return (
     <Stack>
       <S.StyledTypography variant="body1">
-        Waiting for new mail...
+        Waiting for new email...
       </S.StyledTypography>
     </Stack>
   );

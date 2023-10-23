@@ -46,11 +46,11 @@ export default function SimpleSnackbar({ setIsOpen, isOpen }: SnackbarProps) {
     <Snackbar
       open={isOpen}
       onClose={handleClose}
-      anchorOrigin={{ vertical: "top", horizontal: "right" }}
+      anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
       autoHideDuration={3000}
     >
       <Alert severity="success" action={action}>
-        Text copied!
+        Temporary Email Copied!
       </Alert>
     </Snackbar>
   );

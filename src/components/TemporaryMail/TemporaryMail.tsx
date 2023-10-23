@@ -66,7 +66,7 @@ const TemporaryEmail = ({
           <SimpleSnackbar setIsOpen={setIsCopied} isOpen={isCopied} />
         ) : null}
 
-        <S.RefreshDiv $ismobile={mobile ? true : undefined}>
+        <S.StyledDiv $ismobile={mobile ? true : undefined}>
           <S.Span>
             <Typography variant="subtitle2">
               AutoRefresh in {countdown}
@@ -84,7 +84,7 @@ const TemporaryEmail = ({
               onClick={resetCounter}
             />
           </S.Span>
-        </S.RefreshDiv>
+        </S.StyledDiv>
       </Stack>
     </S.Container>
   );
