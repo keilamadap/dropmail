@@ -9,3 +9,10 @@ export const StyledStack = styled(Stack)`
   flex-direction: row;
   gap: 10px;
 `;
+
+export const ColumnStack = styled(Stack)`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;

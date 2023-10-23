@@ -48,14 +48,7 @@ function NotificationButton({ lastReceivedMailId }: NotificationButtonProps) {
           </S.StyledStack>
         )
       ) : (
-        <Stack
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
+        <S.ColumnStack>
           <Typography variant="caption">
             To receive notifications of new emails, click the button below:
           </Typography>
@@ -66,7 +59,7 @@ function NotificationButton({ lastReceivedMailId }: NotificationButtonProps) {
           >
             <Icon icon="basil:notification-on-outline" width="20" height="20" />
           </Button>
-        </Stack>
+        </S.ColumnStack>
       )}
     </Stack>
   );
