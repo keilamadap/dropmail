@@ -25,6 +25,9 @@
 
 <a id="demonstracao" rel="nofollow noreferrer noopener" href="https://dropmail-nu.vercel.app/"  target="_blank"> Acesse o projeto clicando aqui </a>
 
+<a rel="nofollow noreferrer noopener" href="https://www.loom.com/share/f6f2c1666b764205a114eff9e6d69038"  target="_blank"> Acesse o vídeo da explicação do projeto. </a>
+
+
 ## Tecnologias Utilizadas: <span id="tecnologias" />
 
 - Javascript
@@ -35,6 +38,7 @@
 - Git
 - Material UI
 - Styled-Components
+- GraphQL
 
 ## Como rodar o projeto? <span id="comousar" />
 
