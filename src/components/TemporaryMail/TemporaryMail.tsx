@@ -3,7 +3,7 @@ import { Icon } from "@iconify/react";
 import * as S from "./styles";
 import { useEffect, useState } from "react";
 import useMedia from "../../hooks/useMedia";
-import SimpleSnackbar from "../Snackbar/SnackbarProvider";
+import SimpleSnackbar from "../Snackbar/SimpleSnackbar";
 
 type TemporaryMailProps = {
   randomEmail: string;

@@ -1,4 +1,4 @@
-import { Button, Stack, Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import { useState } from "react";
 import { Icon } from "@iconify/react";
 import * as S from "./styles";
@@ -29,7 +29,7 @@ function NotificationButton({ lastReceivedMailId }: NotificationButtonProps) {
   };
 
   return (
-    <Stack sx={{ display: "flex" }}>
+    <S.Container>
       {notificationPermission === "granted" ? (
         lastReceivedMailId ? (
           <>
@@ -57,7 +57,7 @@ function NotificationButton({ lastReceivedMailId }: NotificationButtonProps) {
           </Button>
         </S.ColumnStack>
       )}
-    </Stack>
+    </S.Container>
   );
 }
 

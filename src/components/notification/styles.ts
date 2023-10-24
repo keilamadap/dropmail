@@ -1,6 +1,10 @@
 import styled from "@emotion/styled";
 import { Stack } from "@mui/material";
 
+export const Container = styled(Stack)`
+  display: flex;
+`;
+
 export const StyledStack = styled(Stack)`
   display: flex;
   align-items: center;
