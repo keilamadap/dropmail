@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Input, Stack, TextField, Button } from "@mui/material";
+import { Input, Stack } from "@mui/material";
 
 interface MainStyleProps {
   $ismobile: boolean | undefined;
@@ -35,7 +35,7 @@ export const StyledDiv = styled.div<MainStyleProps>`
 
 export const StyledInput = styled(Input)<MainStyleProps>`
   width: 400px;
-  height: 40px;
+  height: 38px;
   padding-left: 10px;
   background: #fff;
   ${(props) =>

@@ -1,4 +1,4 @@
-import { Button, Stack, Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import { Icon } from "@iconify/react";
 import * as S from "./styles";
 import { useEffect, useState } from "react";
@@ -41,51 +41,47 @@ const TemporaryEmail = ({
 
   return (
     <S.Container>
-      <Stack>
-        <Typography variant="body1">Your Temporary Email Address:</Typography>
+      <Typography variant="body1">Your Temporary Email Address:</Typography>
 
+      <S.Span>
+        <S.StyledInput
+          value={randomEmail}
+          $ismobile={mobile ? true : undefined}
+          type="text"
+          endAdornment={
+            <Button
+              color="primary"
+              variant="contained"
+              size="medium"
+              onClick={copyToClipboard}
+            >
+              Copy
+            </Button>
+          }
+        />
+      </S.Span>
+
+      {isCopied && <SimpleSnackbar setIsOpen={setIsCopied} isOpen={isCopied} />}
+
+      <S.StyledDiv $ismobile={mobile ? true : undefined}>
         <S.Span>
-          <S.StyledInput
-            value={randomEmail}
-            $ismobile={mobile ? true : undefined}
-            type="text"
-            endAdornment={
-              <Button
-                color="primary"
-                variant="contained"
-                size="medium"
-                onClick={copyToClipboard}
-              >
-                Copy
-              </Button>
-            }
+          <Typography variant="subtitle2">
+            AutoRefresh in {countdown}
+          </Typography>
+
+          <Icon icon="line-md:loading-loop" width="20" height="20" />
+        </S.Span>
+        <S.Span>
+          <Typography variant="subtitle2">Refresh</Typography>
+          <Icon
+            icon="ep:refresh"
+            width="20"
+            style={{ cursor: "pointer" }}
+            height="20"
+            onClick={resetCounter}
           />
         </S.Span>
-
-        {isCopied && (
-          <SimpleSnackbar setIsOpen={setIsCopied} isOpen={isCopied} />
-        )}
-
-        <S.StyledDiv $ismobile={mobile ? true : undefined}>
-          <S.Span>
-            <Typography variant="subtitle2">
-              AutoRefresh in {countdown}
-            </Typography>
-
-            <Icon icon="line-md:loading-loop" width="20" height="20" />
-          </S.Span>
-          <S.Span>
-            <Typography variant="subtitle2">Refresh</Typography>
-            <Icon
-              icon="ep:refresh"
-              width="20"
-              style={{ cursor: "pointer" }}
-              height="20"
-              onClick={resetCounter}
-            />
-          </S.Span>
-        </S.StyledDiv>
-      </Stack>
+      </S.StyledDiv>
     </S.Container>
   );
 };
