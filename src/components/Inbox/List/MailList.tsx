@@ -1,7 +1,7 @@
 import useMedia from "../../../hooks/useMedia";
 import * as S from "./styles";
 import EmptyMails from "../../EmptyMails/EmptyMails";
-import { MailProps } from "../../../types/mailType";
+import { MailProps } from "../../../types/mail";
 import { Typography } from "@mui/material";
 
 const EmailList = ({ mails }: MailProps) => {
@@ -18,7 +18,7 @@ const EmailList = ({ mails }: MailProps) => {
             <S.StyledHeader variant="body1">
               {mail.headerSubject}
             </S.StyledHeader>
-            <S.StyledInfo variant="body1"> {mail.text}</S.StyledInfo>
+            <S.StyledText variant="body1"> {mail.text}</S.StyledText>
           </S.StyledBox>
         ))
       ) : (

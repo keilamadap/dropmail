@@ -6,8 +6,8 @@ import { GRAPHQL_INCOMINGMAIL, GRAPHQL_MUTATION } from "../queries/queries";
 import TemporaryMail from "../components/TemporaryMail/TemporaryMail";
 import MailList from "../components/Inbox/List/MailList";
 import MailContent from "../components/Inbox/MailContent/MailContent";
-import * as S from "../styles/mainStyle";
-import { IMail } from "../types/mailType";
+import * as S from "./mainStyle";
+import { Mail } from "../types/mail";
 import NotificationButton from "../components/notification/NotificationButton";
 
 type SessionData = {
@@ -19,7 +19,7 @@ type SessionData = {
 function App() {
   const mobile = useMedia("(max-width: 1000px)");
   const [sessionData, setSessionData] = useState<SessionData | null>(null);
-  const [mails, setMails] = useState<IMail[]>([]);
+  const [mails, setMails] = useState<Mail[]>([]);
   const [lastReceivedMailId, setLastReceivedMailId] = useState<string | null>(
     null
   );
@@ -77,7 +77,6 @@ function App() {
   useEffect(() => {
     handleExpiredData();
     handleCreateSession();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

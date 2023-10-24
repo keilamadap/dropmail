@@ -1,5 +1,5 @@
 import { Button, Stack, Typography } from "@mui/material";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Icon } from "@iconify/react";
 import * as S from "./styles";
 
@@ -11,10 +11,6 @@ function NotificationButton({ lastReceivedMailId }: NotificationButtonProps) {
   const [notificationPermission, setNotificationPermission] = useState(
     Notification.permission
   );
-
-  useEffect(() => {
-    setNotificationPermission(Notification.permission);
-  }, []);
 
   const requestNotificationPermission = () => {
     if (Notification.permission !== "granted") {

@@ -1,4 +1,4 @@
-export interface IMail {
+export type Mail = {
   toAddrOrig: string;
   toAddr: string;
   text: string;
@@ -6,14 +6,14 @@ export interface IMail {
   rawSize: number;
   raw: string;
   id: string;
-  html: string | null;
+  html: string;
   headerSubject: string;
   headerFrom: string;
   fromAddr: string;
   downloadUrl: string;
   decodeStatus: string;
-}
+};
 
 export type MailProps = {
-  mails: IMail[];
+  mails: Mail[];
 };

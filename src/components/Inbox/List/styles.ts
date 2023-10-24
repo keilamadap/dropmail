@@ -27,7 +27,7 @@ export const TitleContainer = styled(Card)`
   border-radius: 1px;
 `;
 
-export const StyledInfo = styled(Typography)`
+export const StyledText = styled(Typography)`
   padding: 5px;
   font-weight: 700;
   white-space: nowrap;

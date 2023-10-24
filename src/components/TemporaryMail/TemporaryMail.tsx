@@ -32,7 +32,7 @@ const TemporaryEmail = ({
     return () => {
       clearInterval(interval);
     };
-  }, [randomEmail]);
+  }, []);
 
   const resetCounter = () => {
     handleIncomingMail();
@@ -62,9 +62,9 @@ const TemporaryEmail = ({
           />
         </S.Span>
 
-        {isCopied ? (
+        {isCopied && (
           <SimpleSnackbar setIsOpen={setIsCopied} isOpen={isCopied} />
-        ) : null}
+        )}
 
         <S.StyledDiv $ismobile={mobile ? true : undefined}>
           <S.Span>
